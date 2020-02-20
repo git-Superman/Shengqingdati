@@ -1,0 +1,15 @@
+<view class="myRecord">
+  <image src="{{tit_img}}" class="recordImg"></image>
+  <view class="draw_list">
+    <view class="list_item" bindtap="{{unClick ? 'clickFlip':''}}" wx:for="{{drawList}}" wx:for-item="drawListItem" wx:key="index" data-id="{{index}}" data-con='{{drawListItem.drawCon}}' data-prize='{{drawListItem.prize}}'>
+      <view class="list_item_pos list_item_back {{drawListItem.backFlip == 1 ? 'list_back_front':''}}">
+        <text>{{drawListItem.drawCon}}</text>
+      </view>
+      <image class="list_item_pos list_item_front {{drawListItem.frontFlip == 2 ? 'list_front_back':''}}" src="https://xhsilkroad.5xing.com.cn/assets/mpimg/images/b_draw-item.png" ></image>
+    </view>
+  </view>
+  <view class="drawText">
+    <text>{{text1}} <text class="drawNumber">{{drawNumber}}</text> {{text2}}</text>
+  </view>
+  <view class="drawHistory" catchtap="clickOpenHtml">{{text3}}</view>
+</view>

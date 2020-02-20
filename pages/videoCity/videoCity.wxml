@@ -1,0 +1,27 @@
+<!--pages/videoCity/videoCity.wxml-->
+<view class="navigation bg_gg" style="padding-top:{{statusBarHeight}}px;">
+  <image src='{{urlImg}}/images/logo2.png' mode="widthFix"></image>
+</view>
+
+<view class="content index_bg" style="padding-top:{{statusBarHeight}}px;">
+   <view class="title borr8">{{text1}}</view>
+
+   <view class="list_box text_c borr8">
+      <view class="tit">{{text2}}</view>
+      <scroll-view scroll-y="true"  class="list borr8">
+         <view class="item borr8  {{curr==index?'itemCurr':''}}" wx:for='{{cityList}}' wx:key='index' 
+               bindtap="webVideo" data-url='{{item.link}}' data-index='{{index}}'>{{item.name}}</view>
+      </scroll-view>
+   </view>
+</view>
+
+<view class="tab text_c">
+  <view class="tab_item" bindtap="tab1">
+     <view><image src='/images/tab1.png' mode="widthFix"></image></view>
+     <view class="text">{{text3}}</view>
+  </view>
+  <view class="tab_item" bindtap="tab2">
+     <view><image src="/images/tab2.png" mode="widthFix"></image></view>
+     <view class="text">{{text4}}</view>
+  </view>
+</view>

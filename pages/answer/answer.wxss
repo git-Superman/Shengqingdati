@@ -1,0 +1,47 @@
+/* pages/answer/answer.wxss */
+.box{position: fixed;top: 0;left: 0;width: 100%;height: 100%;
+background: -webkit-linear-gradient(top, #b7ddf9 , #eafcfd); /* Safari 5.1 - 6.0 */
+background: linear-gradient(to bottom, #b7ddf9 , #eafcfd); /* 标准的语法（必须放在最后） */
+}
+.bottom_bg{position: fixed;bottom: -8rpx;left: 0;width: 100%;height: auto;z-index: -1;display:flex;justify-content: center;}
+.bottom_bg image{width: 50%;display:block;margin:o auto;}
+
+.content{position: fixed;top: 18%;left: 15px;right: 15px;background-color: #fff;border-radius: 8px;padding: 10px;
+box-shadow: 0 0 15rpx  #cff4f6;}
+.content .top{position: relative;top:-130rpx;color: #333333;font-size: 32rpx;font-weight: 550;}
+.content .top .tit_n{margin-bottom: 15rpx;}
+.content .top .seconds{width: 98%; position: absolute;top: 50%;left:0;color:#ffb204;font-size: 38rpx;}
+#progress{overflow: hidden; width: 65px;height:65px;background-color: #fff;border-radius: 50%;left: 50%;top: 0;margin-left: -34px;}
+
+.conList{color: #4d6076;margin-top: -70rpx;}
+.conList .tit{font-size: 32rpx;margin-bottom: 70rpx;font-weight: 550;}
+.conList .sel_item{background-color: #f5f7f9;margin: 0 auto;width: 90%;line-height: 34rpx; font-size: 30rpx;border-radius: 50rpx;margin-bottom:40rpx;position: relative;padding:25rpx 10rpx;box-sizing: border-box;}
+.conList .sel_item image{display: none; position: absolute;left: 30rpx;top: 25rpx;width: 50rpx;height: 39rpx;}
+.conList .checkImg{background-color: #2add9a;color: #fff;}
+.conList .wrongImg{background-color: #ff6667;color: #fff;}
+.conList .wrongImg image,.conList .checkImg image{display:block;}
+
+.page{font-size: 26rpx;color:#4d6076;margin-top: 80rpx;}
+
+.content .header{position: relative;width: 65px;height: 65px;border-radius: 50%;overflow: hidden;left: 50%;top:-74rpx; margin-left: -35px;background-color: #fff;}
+.content .hearder_img{width: 65px;height: 65px;border-radius: 50%;overflow: hidden;}
+
+.textList .tit{font-size: 34rpx;color: #333;font-weight: 550;margin-top: -46rpx;}
+.textList .branch{font-size: 26rpx;color: #ffb204;padding:0  10rpx;margin: 40rpx 0 60rpx 40rpx;}
+.textList .num{font-size: 62rpx;font-weight: 600;margin-right: 6rpx;}
+.textList text{position:relative;top: 6rpx;}
+.textList .accuracy{display: -webkit-flex;display: flex;}
+.textList .accuracy .flex1{flex: 1;}
+.textList .accuracy .text1{font-size: 34rpx;font-weight: 550;margin-bottom: 8rpx;color: #333;}
+.textList .accuracy .text2{font-size: 24rpx;color: #999999;}
+.textList .accuracy .line{border-left:1px solid #f0f0f0;}
+.textList .buttons{width: 96%;margin: 70rpx auto;}
+.textList .buttons view{font-size: 32rpx;font-weight: 550;height:90rpx;line-height: 90rpx;border-radius: 44rpx;overflow: hidden;letter-spacing:4rpx;}
+.textList .buttons .look{color: #fff;font-size:24rpx}
+.textList .buttons .again{border:1px solid #ffb204;color: #ffb204;margin-top: 40rpx;box-sizing: border-box;}
+
+
+
+
+
+

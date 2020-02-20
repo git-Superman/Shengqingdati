@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="navigation bg_gg" style="padding-top:{{statusBarHeight}}px;">
+  <image src='{{urlImg}}/images/logo2.png' mode="widthFix"></image>
+</view>
+
+<!-- 地图 -->
+<view class="content index_bg" style="padding-top:{{statusBarHeight}}px;">
+   <view class="title text_c"><image src="{{textSrc}}" mode="widthFix"></image></view>
+   <view class="map-list">
+      <view class="map-item" wx:for="{{list}}" wx:key="index">
+         <view class="map-item-it">
+            <view class="map-item-box" bindtap="sel_City" data-index="{{index}}" data-name="{{item.id}}">
+               <image class="map-item-box-img img{{index+1}}" src="{{item.backimage}}"></image>
+               <text class="map-item-box-text">{{item.name}}</text>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>
+
+<!-- 左侧按钮-->
+<view class="buttons">
+  <view class="tips index_tips" animation="{{animationData}}" hidden="{{tips_show}}">
+      <view class="textView">
+         <view>{{textList[4]}}</view>
+         <view>{{textList[5]}}</view>
+      </view>
+      <view class="gksp text_c" bindtap="lookvideo">{{textList[0]}}</view>
+   </view>
+   <view class="hqts text_c but" bindtap="tipsShow">
+         <image src='{{urlImg}}/images/index_icon2.png'></image>
+         <view class="but_text">{{textList[1]}}</view>
+   </view>
+</view>
+<view class="fxhj fxhj-right text_c but" wx:if="{{canIUse}}">
+      <image src='{{urlImg}}/images/index_icon3.png'></image>
+      <view class="but_text">{{textList[2]}}</view>
+      <button open-type='share'></button>
+</view>
+<!-- 开始答题 -->
+<!-- <view class="ksdt gksp" bindtap="Cityshow">{{textList[3]}}</view> -->
+<!-- 城市列表 -->
+<!-- <view class="{{scroll==1?'top':''}}{{scroll==2?'bottom':''}}  cityList text_c hqts" animation='{{animationData2}}'>
+    <scroll-view scroll-y="true" style="height: 160rpx" 
+                 bindscrolltoupper='scroll1' bindscrolltolower='scroll2'>
+        <view class="item {{index==cityCurr?'itemCurr':''}}" bindtap="sel_City" wx:for="{{provinces}}" wx:key='{{index}}' data-index='{{index}}' data-name="{{item.id}}">{{item.name}}</view>
+    </scroll-view>
+</view> -->

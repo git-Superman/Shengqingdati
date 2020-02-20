@@ -1,0 +1,2 @@
+/* pages/web/web.wxss */
+.box{box-sizing: border-box;padding: 30rpx;}

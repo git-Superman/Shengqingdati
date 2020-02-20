@@ -1,0 +1,41 @@
+/* pages/author/author.wxss */
+
+.logo {
+     display: block;
+     width: 332rpx;
+     height: 89rpx;
+     margin: 100rpx auto;
+}
+
+.center {
+     width: 100%;
+     text-align: center;
+}
+
+.tip1 {
+     color: #f48552;
+     font-size: 36rpx;
+}
+
+.tip2 {
+     color: #333;
+     font-size: 28rpx;
+     margin: 40rpx auto 100rpx;
+     width: 600rpx;
+}
+
+.btn_auth {
+     width: 85%!important;
+     margin: 0 auto;
+     background: #0094ea;
+     border: none;
+     color: #fff;
+}
+
+.sjBtn {
+     width: 100%;
+     height: 200px;
+     text-align: center;
+     margin: 0 auto;
+     margin-top: 70%;
+}

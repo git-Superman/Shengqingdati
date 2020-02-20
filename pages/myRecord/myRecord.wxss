@@ -1,0 +1,60 @@
+
+/* pages/myRecord.wxss */
+.fs30{font-size: 30rpx;}
+.fs32{font-size: 32rpx;}
+.col_f{color: #fff;}
+.col_y{color: #ffbc3c;}
+
+
+page{
+  background: #01b7de;
+}
+.myRecord{
+  width: 100%;
+  padding-top: 45rpx;
+  text-align: center;
+}
+.recordImg{
+  width: 670rpx;
+  height: 198rpx;
+}
+.record_text{
+  margin: 30rpx auto 24rpx auto;
+}
+.ranking{
+  background: #fff;
+  border-radius: 18rpx;
+  border: 4rpx solid #2b4db4;
+  width: 690rpx;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 110rpx;
+}
+.ranking .ranking_img{
+  position: absolute;
+  top: -68rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 453rpx;
+  height: 107rpx;
+}
+.ranking_list{
+  padding: 50rpx 0 20rpx;
+}
+.ranking_list_item{
+  width: 630rpx;
+  /* height: 100rpx;
+  line-height: 100rpx; */
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 35rpx 50rpx;
+  box-sizing: border-box;
+  background-color: #0faaff; 
+  box-shadow:inset 0px -5px 0px #2b4db4,0 0 2px 1px #000;
+  border-radius: 8px;
+  word-break:break-all;
+}
+.noRanking{
+  margin: 40rpx auto;
+}

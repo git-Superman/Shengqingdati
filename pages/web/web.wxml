@@ -1,0 +1,4 @@
+<!--pages/web/web.wxml-->
+<view class="box">
+    <web-view src="{{weburl}}" bindload='load'></web-view>
+  </view>

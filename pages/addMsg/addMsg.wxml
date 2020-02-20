@@ -1,0 +1,20 @@
+<view class="addMsg" style="background: url({{imglist[0]}}) 0 0 no-repeat; background-size: cover;">
+  <!-- 文字 -->
+  <view class="addMsg_text">
+    <text>{{prizeName}}</text>
+  </view>
+  <!-- 填写信息 -->
+  <view class="add_Msg">
+    <image src="{{imglist[1]}}" class="addMsg_title"></image>
+    <!-- 输入框 -->
+    <view class="ipt_group">
+      <view class="addMsg_name">
+        <input type="text" placeholder="{{text1}}" placeholder-style="color:#bdbdbd" value="{{name}}" bindinput="nameInput"></input>
+      </view>
+      <view class="addMsg_iphone">
+        <input type="text" placeholder="{{text2}}" placeholder-style="color:#bdbdbd" value="{{email}}" bindinput="emailInput"></input>
+      </view>
+      <view class="addMsg_btn" style="background: url('https://xhsilkroad.5xing.com.cn/assets/mpimg/images/b_award_btn.png') 0 0 no-repeat; background-size: cover;" catchtap="clickBtn">{{text3}}</view>
+    </view>
+  </view>
+</view>

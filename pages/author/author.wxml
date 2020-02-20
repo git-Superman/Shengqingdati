@@ -1,0 +1,9 @@
+<!--pages/author/author.wxml-->
+<view>
+   <image src='{{urlImg}}/images/logo3.png' class='logo'></image>
+      <view class='center tip1'>{{context[0]}}</view>
+      <view class='center tip2'>{{context[1]}}</view>
+      <button class='btn_auth' wx:if="{{canIUse}}" open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">{{context[2]}}</button>
+      <view class='sjBtn' wx:else>{{context[3]}}</view>
+</view>
+

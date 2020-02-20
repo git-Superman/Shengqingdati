@@ -1,0 +1,18 @@
+.history_item{
+  padding: 40rpx 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.history_itme_top{
+  font-size: 30rpx;
+}
+
+.history_itme_foot{
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 28rpx;
+}
+
+.small_text{
+  font-size: 24rpx;
+}

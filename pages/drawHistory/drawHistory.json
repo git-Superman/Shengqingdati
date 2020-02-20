@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#1c7af9",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "中奖记录",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#e5e5e5"
+}

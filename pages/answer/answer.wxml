@@ -1,0 +1,61 @@
+<!--pages/answer/answer.wxml-->
+<view class="box">
+<!-- 答题模块 -->
+<view class="content" hidden='{{complete}}'>
+   <!-- 倒计时 -->
+   <view class="top text_c" hidden="{{showview}}">
+      <view class='tit_n'>{{textlist[0]}}{{sNumber}}{{textlist[1]}}</view>
+      <canvas canvas-id='progress' id='progress'></canvas>
+      <view class="seconds">{{seconds}}</view>
+   </view>
+   <!-- 题目，选项 -->
+   <view class="conList text_c" hidden="{{showview}}">
+         <view class="tit">{{sNumber}}.{{conTopic.question}}</view> 
+         <view class="sel_item {{current==index?currentbg:''}} {{answer==item.num?checkbgShow?checkbg:'':''}}" 
+               wx:for="{{conTopic.option}}" wx:key='index' 
+               bindtap="select" data-num='{{item.num}}' data-index='{{index}}'>
+            <image src='{{answer==item.num?checkImg:wrongImg}}'></image>
+            {{item.value}}
+         </view>
+   </view>
+   <!-- 页数 -->
+   <view class="page" hidden="{{showview}}">{{sNumber}}/{{sTotal}}</view>
+</view>
+
+<!-- 完成答题 -->
+<view class="content" hidden='{{!complete}}'>
+   <!-- 头像 -->
+   <view class="header">
+      <view class="hearder_img"><open-data type="userAvatarUrl"></open-data></view>
+   </view>
+   <view class="textList text_c">
+      <view class="tit">{{textlist[2]}}</view>
+      <!-- 分数 -->
+      <view class="branch" style="background:url('{{urlImg}}/images/answerBranch.png') center center no-repeat;background-size:45%;">
+         <text class="num">{{fraction}}</text><text>{{textlist[7]}}</text>
+      </view>
+      <!-- 正确率 -->
+      <view class="accuracy text_c">
+          <view class="flex1">
+              <view class="text1">{{correct}}</view>
+              <view class="text2">{{textlist[3]}}</view>
+          </view>
+          <view class="line"></view>
+          <view class="flex1">
+              <view class="text1">{{error}}</view>
+              <view class="text2">{{textlist[4]}}</view>
+          </view>
+      </view>
+      <!-- 按钮 -->
+      <view class="buttons">
+         <view class="look" bindtap="lookvideo"
+         style="background:url('{{urlImg}}/images/answerBut.png')  bottom no-repeat;background-size:cover;" >{{textlist[5]}}</view>
+         <view class="again" bindtap="return">{{textlist[6]}}</view>
+      </view>
+
+   </view>
+</view>
+
+
+<view class="bottom_bg"><image src="{{answerBg}}" mode='widthFix'></image></view>
+</view>

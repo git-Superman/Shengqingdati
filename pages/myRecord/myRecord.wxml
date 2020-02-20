@@ -1,0 +1,25 @@
+<view class="myRecord">
+  <view  bindtap="jumpDraw"><image src="{{imgList[0]}}" class="recordImg"></image></view>
+  <view class="record_text">
+    <view class="fs30 col_f">{{text1}}<text class="fs32 col_y">{{drawNumber}}</text>{{text2}}</view>
+  </view>
+  <view class="ranking">
+    <image class="ranking_img" src="{{imgList[1]}}"></image>
+    <view class="ranking_list">
+      <scroll-view class="scrollHeight" style="height: {{height ? height + 'rpx' : auto }}" scroll-y="{{true}}">
+        <view class="ranking_list_item" 
+              wx:if="{{historyRecord.length}}" wx:for="{{historyRecord}}" wx:for-item="rankingItem" wx:key="*this">
+          <text class="fs32 col_f">{{rankingItem.place}}</text>
+          <text class="fs32 col_f">{{rankingItem.number}}{{text3}}</text>
+        </view>
+      </scroll-view>
+      <view class="noRanking" wx:if="{{historyRecord.length === 0}}">
+        <text>{{text4}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 底部导航 -->
+
+  <!-- <mp-tabber style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{tabbarList}}" bindchange="tabChange"></mp-tabber> -->
+
+</view>

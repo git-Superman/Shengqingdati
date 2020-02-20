@@ -1,0 +1,87 @@
+/* pages/myRecord.wxss */
+
+page {
+  background: #01b7de;
+}
+
+.myRecord {
+  width: 100%;
+  padding-top: 45rpx;
+  text-align: center;
+}
+
+.recordImg {
+  width: 670rpx;
+  height: 198rpx;
+}
+
+/* 抽奖 */
+
+.draw_list {
+  width: 670rpx;
+  margin: 30rpx auto;
+  overflow: hidden;
+  perspective: 1000;
+   -webkit-perspective: 1000;
+  transform-style: preserve-3d;
+}
+
+.list_item {
+  float: left;
+  position: relative;
+  width: 214rpx;
+  height: 267rpx;
+  margin: 20rpx 5rpx;
+  border-radius: 20rpx;
+  transform-style: preserve-3d;
+}
+
+.list_item_pos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  backface-visibility: hidden; /*隐藏被旋转元素的背面*/
+  transition: all 0.6s;
+}
+
+.list_item_back {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.list_item_back text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/*背面变前面*/
+
+.list_back_front {
+  transform: rotateY(0deg);
+}
+
+/*前面变背面*/
+
+.list_front_back {
+  transform: rotateY(180deg);
+}
+
+.drawText{
+  font-size: 32rpx;
+  color: #fff;
+}
+.drawNumber{
+  color: #ffbc3c;
+}
+.drawHistory{
+  font-size: 30rpx;
+  text-decoration: underline;
+  color: #fff;
+  margin-top: 25rpx;
+}
