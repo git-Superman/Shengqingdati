@@ -1,5 +1,6 @@
-<view class="addMsg" style="background: url({{imglist[0]}}) 0 0 no-repeat; background-size: cover;">
+<view class="addMsg">
   <!-- 文字 -->
+  <image src="{{imglist[0]}}" style="postion:fixed;left:0;right:0;width:100%;height:100%;z-index:-1"></image>
   <view class="addMsg_text">
     <text>{{prizeName}}</text>
   </view>

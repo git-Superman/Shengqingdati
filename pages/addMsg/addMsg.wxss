@@ -8,24 +8,27 @@
 
 .addMsg_text {
   position: absolute;
-  top: 38%;
+  top: 34%;
   left: 0;
   width: 100%;
   text-align: center;
 }
 
 .addMsg_text text {
-  display: block;
+  display: flex;
   font-size: 34rpx;
   color: #fff;
   width: 70%;
+  height:200rpx;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
 .add_Msg {
   background: #fff;
   position: absolute;
-  top: 51%;
+  top: 54%;
   left: 50%;
   transform: translate(-50%, 0);
   border-radius: 18rpx;

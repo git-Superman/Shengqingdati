@@ -31,8 +31,8 @@ Page({
       })
       this.setData({
         imgList:['https://xhsilkroad.5xing.com.cn/assets/img/lucky-draw.png','https://xhsilkroad.5xing.com.cn/assets/img/past-records.png'],
-        text1:'Free lucky ',
-        text2:' draw',
+        text1:'',
+        text2:' lucky draws left',
         text3:' points',
         text4:'No ranking',
         

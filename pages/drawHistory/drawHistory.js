@@ -14,7 +14,14 @@ Page({
     isShow: true,   // 是否显示加载 
     scrollyHeight: 0
   },
-
+  handleClickPush(e){
+    let that = this,index = e.currentTarget.dataset.index,content = '',historyList = that.data.historyList;
+    content = historyList[index].name.replace(/&/g,'$');
+    // console.log(index,content);
+    wx.navigateTo({
+      url: '/pages/addMsg/addMsg?prizeName='+content
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

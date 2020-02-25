@@ -11,9 +11,9 @@ Page({
     email: ''   // 邮箱
   },
   onLoad: function (options) {
-   console.log(options)
+   console.log(options.prizeName.replace(/\$/,'&'));
     this.setData({
-      prizeName: options.prizeName
+      prizeName: options.prizeName.replace(/\$/g,'&')
     })
     const lang = wx.getStorageSync('language')
     if (lang == 'en') {

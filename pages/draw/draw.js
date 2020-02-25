@@ -65,8 +65,8 @@ Page({
       })
       this.setData({
         tit_img:'https://xhsilkroad.5xing.com.cn/assets/img/lucky-draw.png',
-        text1:'lucky draws',
-        text2:' left',
+        text1:'',
+        text2:'lucky draws left',
         text3:'Your Prizes'
       })
       language=true

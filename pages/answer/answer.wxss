@@ -3,9 +3,9 @@
 background: -webkit-linear-gradient(top, #b7ddf9 , #eafcfd); /* Safari 5.1 - 6.0 */
 background: linear-gradient(to bottom, #b7ddf9 , #eafcfd); /* 标准的语法（必须放在最后） */
 }
-.bottom_bg{position: fixed;bottom: -8rpx;left: 0;width: 100%;height: auto;z-index: -1;display:flex;justify-content: center;}
-.bottom_bg image{width: 50%;display:block;margin:o auto;}
-
+.bottom_bg{position: fixed;bottom: -8rpx;left: 0;width: 100%;height: auto;z-index: -1;}
+.bottom_bg image.bot{width: 40%;display:block;margin:0 auto;}
+.bottom_bg image.top{width:100%;position:absolute;bottom:0;left:0;z-index:-1;}
 .content{position: fixed;top: 18%;left: 15px;right: 15px;background-color: #fff;border-radius: 8px;padding: 10px;
 box-shadow: 0 0 15rpx  #cff4f6;}
 .content .top{position: relative;top:-130rpx;color: #333333;font-size: 32rpx;font-weight: 550;}

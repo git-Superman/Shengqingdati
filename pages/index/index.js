@@ -54,7 +54,7 @@ Page({
       } else {
         this.setData({
           mapSrc: this.data.urlImg + '/images/enmap.png',  // 地图,
-          textSrc: this.data.urlImg + '/images/entitle.png',   // 标题
+          textSrc: '/images/title.png',   // 标题
         })
       }
       
@@ -135,7 +135,7 @@ Page({
           text: 'My Score',
         })
         that.setData({
-          textList: ['Watch video', 'Get hints', 'Share & Lucky Draw', 'start', 'Watch the Xinhua silk road video for tips', ''],
+          textList: ['Watch video', 'Get Hints', 'Share & Lucky Draw', 'start', 'Watch the Xinhua silk road video for tips', ''],
           provinces: that.data.provinces_e
         })
       }

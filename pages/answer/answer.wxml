@@ -57,5 +57,7 @@
 </view>
 
 
-<view class="bottom_bg"><image src="{{answerBg}}" mode='widthFix'></image></view>
+<view class="bottom_bg">
+   <image mode='widthFix' class="top" src="/images/bsj.png"></image>
+   <image src="{{answerBg}}" class="bot" mode='widthFix'></image></view>
 </view>

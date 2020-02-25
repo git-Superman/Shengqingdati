@@ -1,11 +1,11 @@
 <view class="draw_history">
   <!-- <scroll-view scroll-y="true" style="height:{{scrollyHeight}}px;"> -->
-    <navigator url="/pages/addMsg/addMsg?prizeName={{item.name}}" class="history_item" wx:for="{{historyList}}" wx:for-item="item" wx:key="index">
+    <view bindtap="handleClickPush" data-index="{{index}}" class="history_item" wx:for="{{historyList}}" wx:for-item="item" wx:key="index">
       <view class="history_itme_top">{{item.name}}</view>
       <view class="history_itme_foot">
         <text>{{timeText}}</text>
         <text class="small_text">{{item.time}}</text>
       </view>
-    </navigator>
+    </view>
   <!-- </scroll-view> -->
 </view>
