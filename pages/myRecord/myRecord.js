@@ -16,6 +16,10 @@ Page({
     historyRecord: [], 
   },
   onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket:true
+    });
+
     wx.showLoading({
       title: '加载中',
     }) 

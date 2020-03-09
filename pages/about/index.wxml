@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<!-- <view class="navigation bg_gg" style="padding-top:{{statusBarHeight}}px;">
+  <image src='{{urlImg}}/images/logo2.png' mode="widthFix"></image>
+</view> -->
+<view class="about-title" >
+   <image class="about-bg" src="/images/bj.png" />
+   <text class="about-title-text">{{title[0]}}</text>
+</view>
+<view class="about-button">
+   <button bindtap="handleClickPush">{{title[1]}}</button>
+   <text>{{title[2]}}</text>
+</view>
+<view class="about-logo">
+   <image mode="widthFix" src='/images/logo.png'></image>
+</view>

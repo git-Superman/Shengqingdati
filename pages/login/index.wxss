@@ -1,0 +1,10 @@
+page{background-color: #1c7af9;}
+.logo{margin-top: 200rpx;}
+.logo image{width: 300rpx;}
+.title{margin-top:40rpx;}
+.title image{width: 600rpx;}
+.loginBg{position: fixed;top: 50%;margin-top: -130rpx;width: 100%;height: auto;}
+.loginBg image{width: 75%;}
+.buttons{position: fixed;bottom:240rpx;left: 0;width: 100%;}
+.buttons button{display: inline-block; width: 260rpx;height: 80rpx;border: 1px solid #fff;color: #fff;font-size: 30rpx;background-color: transparent;margin: 0 20rpx;}
+.buttons .selBut{background-color: #fff;color: #1c7af9;}

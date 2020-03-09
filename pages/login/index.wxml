@@ -1,0 +1,10 @@
+<!--login.wxml-->
+<view class='login text_c'>
+    <view class="logo"><image src="{{urlImg}}/images/logo.png" lazy-load='true' mode='widthFix'></image></view>
+    <view class="title"><image src="{{urlImg}}/images/loginText.png" lazy-load='true' mode='widthFix'></image></view>
+    <view class="loginBg"><image src="{{urlImg}}/images/loginBg.png" lazy-load='true' mode='widthFix'></image></view>
+    <view class="buttons">
+        <button class="{{sel_but=='cn'?'selBut':''}}" data-id='cn' bindtap='getSelected'>中文</button>
+        <button class="{{sel_but=='en'?'selBut':''}}" data-id='en' bindtap='getSelected'>English</button>
+    </view>
+</view>

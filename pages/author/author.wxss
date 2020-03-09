@@ -20,7 +20,7 @@
 .tip2 {
      color: #333;
      font-size: 28rpx;
-     margin: 40rpx auto 100rpx;
+     margin: 40rpx auto 120rpx;
      width: 600rpx;
 }
 
@@ -38,4 +38,10 @@
      text-align: center;
      margin: 0 auto;
      margin-top: 70%;
+}
+
+.textCenter{
+     width:80%;
+     margin:0 auto 80rpx;
+     color: #0094ea;
 }

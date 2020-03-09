@@ -36,12 +36,25 @@ box-shadow: 0 0 15rpx  #cff4f6;}
 .textList .accuracy .text2{font-size: 24rpx;color: #999999;}
 .textList .accuracy .line{border-left:1px solid #f0f0f0;}
 .textList .buttons{width: 96%;margin: 70rpx auto;}
-.textList .buttons view{font-size: 32rpx;font-weight: 550;height:90rpx;line-height: 90rpx;border-radius: 44rpx;overflow: hidden;letter-spacing:4rpx;}
+.textList .buttons .look{font-size: 32rpx;font-weight: 550;height:90rpx;line-height: 90rpx;border-radius: 44rpx;overflow: hidden;letter-spacing:4rpx;}
 .textList .buttons .look{color: #fff;font-size:24rpx}
 .textList .buttons .again{border:1px solid #ffb204;color: #ffb204;margin-top: 40rpx;box-sizing: border-box;}
 
 
-
-
-
-
+.display-flex-button{
+  display:flex;
+  justify-content: space-between;
+  margin-top:70rpx;
+}
+.display-flex-button view{
+  width:46%;
+  border:1px solid #FAAA28;
+  padding:20rpx 0;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 30px 30px;
+  color:#ffb204;
+}
+.fixed-shareIt{
+  padding-top:0 !important;
+}

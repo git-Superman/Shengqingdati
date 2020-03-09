@@ -1,0 +1,47 @@
+/**index.wxss**/
+.navigation{position:fixed;top: 0;left: 0;width: 100%;z-index: 9999; height: 90rpx;align-items: center;display: flex;}
+.navigation image{width:220rpx;margin-left: 15px;}
+.about-title{
+  position:relative;
+}
+.about-bg{
+  width:100%;
+  height:720rpx;
+  /* margin-top:80rpx; */
+}
+.about-title-text{
+  position:absolute;
+  width:80%;
+  bottom:62rpx;
+  left:50%;
+  margin-left:-40%;
+  color:white;
+  text-align: center;
+}
+.about-button{
+  padding:40rpx 0;
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+.about-button button{
+  width:80%;height:96rpx;
+  background-color:#1C79F8;
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size:38rpx;
+  border-radius:12rpx;
+}
+.about-button text{
+  width:80%;
+  padding-top:40rpx;
+}
+.about-logo{
+  width:40%;
+  margin:0 auto;
+}
+.about-logo image{
+  width:100%;
+}

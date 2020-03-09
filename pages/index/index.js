@@ -7,8 +7,11 @@ const animation2 = wx.createAnimation({ timingFunction: 'linear', duration: 300 
 var cityName='-1';
 Page({
   data: {
+    isShareIt:false,
+    shareBG:'',
     format : [],
     urlImg: app.globalData.urlImg,
+    url:app.globalData.url,
     mapSrc: '',  // 地图,
     textSrc: '',   // 标题
     statusBarHeight: app.globalData.statusBarHeight,//顶部栏高度
@@ -43,8 +46,18 @@ Page({
     textList:['观看视频','获取提示','分享获奖','开始答题','观看新华丝路英文省情视频','获取相关提示信息'],
     list:[]
   },
+  handleClickShare(e){
+    console.log(e);
+    if(e.currentTarget.dataset.id === '1'){
+      this.setData({isShareIt:true});
+    }else{
+      this.setData({isShareIt:false});
+    }
+    
+  },
+
   onLoad: function () {
-      wx.hideShareMenu()//取消顶部按钮分享
+      
       var lang = wx.getStorageSync('language');  // 语言
       if(lang == 'cn') {
         this.setData({
@@ -61,6 +74,12 @@ Page({
   },
   init(){
     let that = this;
+    let shareBG ='';
+    // 分享
+    wx.showShareMenu({
+      withShareTicket:true
+    });
+   
     const token = wx.getStorageSync('token');
     const language = wx.getStorageSync('language');
     wx.request({
@@ -78,8 +97,10 @@ Page({
           list.forEach(item=>{
             if(language === 'cn'){
               item.name = item.cnprovice;
+              shareBG =that.data.url+'/assets/img0306/share-en.jpg';
             }else{
               item.name = item.enprovice;
+              shareBG =that.data.url+'/assets/img0306/share-cn.jpg';
             }
           });
           let k = 0;
@@ -89,7 +110,7 @@ Page({
               k++;
             }
           }
-          that.setData({list,format});
+          that.setData({list,format,shareBG});
           console.log(list,format);
 
         }
@@ -137,6 +158,15 @@ Page({
         that.setData({
           textList: ['Watch video', 'Get Hints', 'Share & Lucky Draw', 'start', 'Watch the Xinhua silk road video for tips', ''],
           provinces: that.data.provinces_e
+        })
+      }else{
+        wx.setTabBarItem({
+          index: 0,
+          text: '我要挑战',
+        })
+        wx.setTabBarItem({
+          index: 1,
+          text: '我的战绩',
         })
       }
     }
@@ -286,4 +316,86 @@ Page({
       this.height_hide()
     }
   },
+
+
+  //点击保存图片
+ save (e) {
+  let that = this;
+  let urlImg = e.currentTarget.dataset.url;
+  //若二维码未加载完毕，加个动画提高用户体验
+  //判断用户是否授权"保存到相册"
+  wx.getSetting({
+   success (res) {
+    //没有权限，发起授权
+    if (!res.authSetting['scope.writePhotosAlbum']) {
+     wx.authorize({
+      scope: 'scope.writePhotosAlbum',
+      success () {//用户允许授权，保存图片到相册
+        wx.showLoading({
+          title: 'saving...',
+        })
+       that.savePhoto(urlImg);
+      },
+      fail () {//用户点击拒绝授权，跳转到设置页，引导用户授权
+        wx.showToast({
+          title: 'fail!',
+          icon:'none'
+        });
+       wx.openSetting({
+        success () {
+         wx.authorize({
+          scope: 'scope.writePhotosAlbum',
+          success() {
+            wx.showToast({
+              icon: 'loading',
+              duration: 1000
+             });
+           that.savePhoto();
+          }
+         })
+        }
+       })
+      }
+     })
+    } else {//用户已授权，保存到相册
+      wx.showLoading({
+        title: 'saving...',
+      })
+     that.savePhoto(urlImg)
+    }
+   }
+  })
+ },
+//保存图片到相册，提示保存成功
+ savePhoto() {
+  let that = this
+  wx.downloadFile({
+   url: that.data.shareBG,
+   success: function (res) {
+    wx.saveImageToPhotosAlbum({
+     filePath: res.tempFilePath,
+     success(res) {
+      wx.hideLoading()
+      wx.showToast({
+       title: 'success',
+       icon: "success",
+       duration: 1000
+      });
+      that.setData({isShareIt:false})
+     },
+     fail(){
+      wx.hideLoading()
+     }
+    })
+   },
+   fail(){
+    wx.hideLoading()
+   }
+  })
+ }
+
+
+
+
+
 })

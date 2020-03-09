@@ -148,6 +148,7 @@ Page({
                 })
                 // 跳转到填写信息界面
                 setTimeout(function () {
+                  prizeName = prizeName.replace(/\&/g,'$');
                   wx.navigateTo({
                     url: '/pages/addMsg/addMsg?prizeName=' + prizeName,
                     success: function () {

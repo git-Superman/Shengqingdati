@@ -10,7 +10,7 @@
    </view>
    <!-- 题目，选项 -->
    <view class="conList text_c" hidden="{{showview}}">
-         <view class="tit">{{sNumber}}.{{conTopic.question}}</view> 
+         <view class="tit">{{sNumber}}. {{conTopic.question}}</view> 
          <view class="sel_item {{current==index?currentbg:''}} {{answer==item.num?checkbgShow?checkbg:'':''}}" 
                wx:for="{{conTopic.option}}" wx:key='index' 
                bindtap="select" data-num='{{item.num}}' data-index='{{index}}'>
@@ -50,7 +50,11 @@
       <view class="buttons">
          <view class="look" bindtap="lookvideo"
          style="background:url('{{urlImg}}/images/answerBut.png')  bottom no-repeat;background-size:cover;" >{{textlist[5]}}</view>
-         <view class="again" bindtap="return">{{textlist[6]}}</view>
+         <view class="display-flex-button">
+            <view bindtap="return">{{textlist[6]}}</view>
+            <view bindtap="handleClickShare" data-id="1">{{textlist[8]}}</view>
+         </view>
+         
       </view>
 
    </view>
@@ -60,4 +64,25 @@
 <view class="bottom_bg">
    <image mode='widthFix' class="top" src="/images/bsj.png"></image>
    <image src="{{answerBg}}" class="bot" mode='widthFix'></image></view>
+</view>
+
+
+<!-- 弹出分享 -->
+<view class="fixed-shareIt" wx:if="{{isShareIt}}">
+<view>
+   <image class="fixed-shareIt-close" bindtap="handleClickShare" data-id="0" mode="widthFix" src="/images/close.png"></image>
+   <view>
+      <image show-menu-by-longpress="{{true}}" mode="widthFix" src="{{shareBG}}"></image>
+   </view>
+   <view class="fixed-shareIt-button">
+      <button open-type="share">
+         <image mode="widthFix" class="fixed-shareIt-button-first" src="/images/wechat.png"></image>
+         <image mode="widthFix" class="fixed-shareIt-button-last" src="/images/share.png"></image>
+      </button>
+      <button class="red" bindtap="save">
+         <image mode="widthFix" class="fixed-shareIt-button-first" src="/images/picture.png"></image>
+         <image mode="widthFix" class="fixed-shareIt-button-last" src="/images/save.png"></image>
+      </button>
+   </view>
+</view>
 </view>

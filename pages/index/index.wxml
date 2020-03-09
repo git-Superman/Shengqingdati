@@ -37,7 +37,7 @@
 <view class="fxhj fxhj-right text_c but" wx:if="{{canIUse}}">
       <image src='{{urlImg}}/images/index_icon3.png'></image>
       <view class="but_text">{{textList[2]}}</view>
-      <button open-type='share'></button>
+      <button bindtap="handleClickShare" data-id="1"></button>
 </view>
 <!-- 开始答题 -->
 <!-- <view class="ksdt gksp" bindtap="Cityshow">{{textList[3]}}</view> -->
@@ -48,3 +48,22 @@
         <view class="item {{index==cityCurr?'itemCurr':''}}" bindtap="sel_City" wx:for="{{provinces}}" wx:key='{{index}}' data-index='{{index}}' data-name="{{item.id}}">{{item.name}}</view>
     </scroll-view>
 </view> -->
+<!-- 弹出分享 -->
+<view class="fixed-shareIt" wx:if="{{isShareIt}}">
+<view>
+   <image class="fixed-shareIt-close" bindtap="handleClickShare" data-id="0" mode="widthFix" src="/images/close.png"></image>
+   <view>
+      <image style="width:100%" show-menu-by-longpress="{{true}}" mode="widthFix" src="{{shareBG}}"></image>
+   </view>
+   <view class="fixed-shareIt-button">
+      <button open-type="share">
+         <image mode="widthFix" class="fixed-shareIt-button-first" src="/images/wechat.png"></image>
+         <image mode="widthFix" class="fixed-shareIt-button-last" src="/images/share.png"></image>
+      </button>
+      <button class="red" bindtap="save">
+         <image mode="widthFix" class="fixed-shareIt-button-first" src="/images/picture.png"></image>
+         <image mode="widthFix" class="fixed-shareIt-button-last" src="/images/save.png"></image>
+      </button>
+   </view>
+</view>
+</view>

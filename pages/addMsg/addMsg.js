@@ -23,7 +23,7 @@ Page({
       this.setData({
         imglist: ['https://xhsilkroad.5xing.com.cn/assets/mpimg/images/b_award_bg2.png', 'https://xhsilkroad.5xing.com.cn/assets/mpimg/images/b_add_msg2.png'],
         text1: 'Please enter your name',
-        text2: 'Enter your phone Email',
+        text2: 'Please enter your email address',
         text3: 'Submit'
       })
     }

@@ -38,9 +38,9 @@ Page({
     if (lang == 'en') {
       that.setData({
         cityList: that.data.city_e,
-        text1:'Watch Xinhua Silk Road\'s provincial business environment assessment videos to get hints!',
-        text2:'Select City',
-        text3: 'Challenge',
+        text1:'Watch Xinhua Silk Road\'s business environment assessment videos to get hints!',
+        text2:'Select',
+        text3: 'Challenge Time',
         text4: 'My Score'
       })
     }
@@ -114,8 +114,8 @@ Page({
       curr:e.currentTarget.dataset.index
     })
     setTimeout(()=>{
-      wx.redirectTo({
-        url: '/pages/web/web?url=' + url,
+      wx.navigateTo({
+        url: '/pages/web/web?url=' + url
       })
     },300)
   },

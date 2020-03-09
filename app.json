@@ -1,5 +1,7 @@
 {
   "pages": [
+    
+    "pages/login/index",
     "pages/login/login",
     "pages/author/author",
     "pages/index/index",
@@ -13,6 +15,7 @@
     
   ],
   "window": {
+    "withShareTicket":"true",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1c7af9",
     "navigationBarTitleText": "新华丝路",
@@ -28,13 +31,13 @@
         "pagePath": "pages/index/index",
         "iconPath": "images/tab1.png",
         "selectedIconPath": "images/tab1-act.png",
-        "text": "我要挑战"
+        "text": "-"
       },
       {
         "pagePath": "pages/myRecord/myRecord",
         "iconPath": "images/tab2.png",
         "selectedIconPath": "images/tab2-act.png",
-        "text": "我的战绩"
+        "text": "-"
       }
     ]
   },

@@ -6,8 +6,10 @@ const ctx = wx.createCanvasContext('progress')
 var city='0';
 Page({
   data: {
+    isShareIt:false,
     showview:true,//页面是否显示（加载是否完毕数据）
     urlImg: app.globalData.urlImg,
+    url: app.globalData.url,
     seconds:20,//倒计时秒数
     // answerBg: app.globalData.urlImg+'/images/answerBg.png',//页面背景地图
     answerBg: '',//页面背景地图
@@ -27,9 +29,21 @@ Page({
     correct:0,//答对数量
     error:0,//错误数量
     fraction:0,//分数
-    textlist:['第','关','恭喜你, 完成答题！','回答正确/道','回答错误/道','观看新华丝路省情视频','返回首页','分']
+    textlist:['第','关','恭喜你, 完成答题！','回答正确/道','回答错误/道','观看新华丝路省情视频','返回首页','分','分享']
+  },
+  handleClickShare(e){
+    console.log(e);
+    if(e.currentTarget.dataset.id === '1'){
+      this.setData({isShareIt:true});
+    }else{
+      this.setData({isShareIt:false});
+    }
+    
   },
   onLoad:function(opt){
+    wx.showShareMenu({
+      withShareTicket:true
+    });
     var that = this
     city = opt.city
     const lang = wx.getStorageSync('language')
@@ -38,8 +52,14 @@ Page({
         title: 'Challenge Time'
       })
       that.setData({
-        textlist: ['Question', '', 'Congratulations! You\'ve completed!', 'Correct answers', 'Wrong answers', 'Watch Xinhua Silk Road short video','Return to homepage','points']
+        textlist: ['Question ', '', 'Congratulations! You\'ve completed!', 'Correct answers', 'Wrong answers', 'Watch Xinhua Silk Road short video','homepage','points','share'],
+        shareBG : that.data.url+'/assets/img0306/share-cn.jpg'
       })
+    }else{
+      that.setData({
+        shareBG : that.data.url+'/assets/img0306/share-en.jpg'  
+      })
+      
     }
     that.getSubject()
     wx.showLoading({
@@ -243,5 +263,80 @@ Page({
     wx.switchTab({
       url: '/pages/index/index'
     })
-  }
+  },
+    //点击保存图片
+ save (e) {
+  let that = this;
+  let urlImg = e.currentTarget.dataset.url;
+  //若二维码未加载完毕，加个动画提高用户体验
+  //判断用户是否授权"保存到相册"
+  wx.getSetting({
+   success (res) {
+    //没有权限，发起授权
+    if (!res.authSetting['scope.writePhotosAlbum']) {
+     wx.authorize({
+      scope: 'scope.writePhotosAlbum',
+      success () {//用户允许授权，保存图片到相册
+        wx.showLoading({
+          title: 'saving...',
+        })
+       that.savePhoto(urlImg);
+      },
+      fail () {//用户点击拒绝授权，跳转到设置页，引导用户授权
+        wx.showToast({
+          title: 'fail!',
+          icon:'none'
+        });
+       wx.openSetting({
+        success () {
+         wx.authorize({
+          scope: 'scope.writePhotosAlbum',
+          success() {
+            wx.showToast({
+              icon: 'loading',
+              duration: 1000
+             });
+           that.savePhoto();
+          }
+         })
+        }
+       })
+      }
+     })
+    } else {//用户已授权，保存到相册
+      wx.showLoading({
+        title: 'saving...',
+      })
+     that.savePhoto(urlImg)
+    }
+   }
+  })
+ },
+//保存图片到相册，提示保存成功
+ savePhoto() {
+  let that = this
+  wx.downloadFile({
+   url: that.data.shareBG,
+   success: function (res) {
+    wx.saveImageToPhotosAlbum({
+     filePath: res.tempFilePath,
+     success(res) {
+      wx.hideLoading()
+      wx.showToast({
+       title: 'success',
+       icon: "success",
+       duration: 1000
+      });
+      that.setData({isShareIt:false})
+     },
+     fail(){
+      wx.hideLoading()
+     }
+    })
+   },
+   fail(){
+    wx.hideLoading()
+   }
+  })
+ }
 })

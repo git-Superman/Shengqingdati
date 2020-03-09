@@ -11,6 +11,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgSrc: 'logo2.png',
     context: [],
+    text:'',
     context_cn: [
       '温馨提示',
       '新华丝路小程序申请获取您的用户信息（头像、昵称）',
@@ -28,14 +29,18 @@ Page({
   },
   onShow: function() {
     var that = this
+    var text = that.data.text;
     const language = wx.getStorageSync('language')
     if (language == 'en') {
-      that.data.context = that.data.context_en
+      that.data.context = that.data.context_en;
+      text = 'The Charming China Quiz is an interactive game designed by Xinhua Silk Road. Players can learn about the economy and culture of China\'s provinces and cities.';
     } else {
-      that.data.context = that.data.context_cn
+      that.data.context = that.data.context_cn;
+      text = '新华丝路省情答题小程序是新华丝路为广大用户更多了解中国各省市的经济、人文等情况而设计的互动游戏，等一起来挑战！';
     }
     that.setData({
-      context: that.data.context
+      context: that.data.context,
+      text
     })
   },
   // 授权弹框
